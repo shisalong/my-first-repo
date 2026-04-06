@@ -1,0 +1,28 @@
+2026-04-06 13:47:19,348 | __main__ | INFO | Navigated to LoginPage
+2026-04-06 13:47:27,832 | __main__ | INFO | Navigated to MfaPage
+2026-04-06 13:47:51,418 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:47:59,197 | __main__ | INFO | Navigated to LoginPage
+2026-04-06 13:48:15,867 | app.db.connection | INFO | Database connection pool created.
+2026-04-06 13:48:16,219 | app.services.auth_service | INFO | User 'Shisa' authenticated successfully.
+2026-04-06 13:48:16,405 | app.services.crypto_service | INFO | Crypto engine initialized.
+2026-04-06 13:48:16,407 | app.services.audit_service | INFO | Audit: LOGIN by Shisa - User 'Shisa' logged in.
+2026-04-06 13:48:16,408 | __main__ | INFO | Navigated to MfaPage
+2026-04-06 13:48:25,477 | app.services.audit_service | INFO | Audit: MFA_VERIFIED by shisa - MFA verification successful.
+2026-04-06 13:48:25,478 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:48:32,223 | __main__ | INFO | Navigated to AddPasswordPage
+2026-04-06 13:49:20,351 | app.services.password_service | INFO | Password added for site 'Youtube', user 'abcdef'.
+2026-04-06 13:49:20,352 | app.services.audit_service | INFO | Audit: ADD_PASSWORD by shisa - Added password for site 'Youtube', user 'abcdef'.
+2026-04-06 13:49:21,497 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:49:22,400 | __main__ | INFO | Navigated to ViewPasswordsPage
+2026-04-06 13:49:28,393 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:49:29,614 | __main__ | INFO | Navigated to DeletePasswordsPage
+2026-04-06 13:49:36,854 | app.services.password_service | INFO | Password id=1 deleted.
+2026-04-06 13:49:36,855 | app.services.audit_service | INFO | Audit: DELETE_PASSWORD by shisa - Deleted password id=1, site='youtube'.
+2026-04-06 13:49:39,090 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:49:39,903 | __main__ | INFO | Navigated to ViewPasswordsPage
+2026-04-06 13:49:46,513 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:49:47,239 | __main__ | INFO | Navigated to DeletePasswordsPage
+2026-04-06 13:49:54,421 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:49:55,398 | __main__ | INFO | Navigated to AuditPage
+2026-04-06 13:50:04,912 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:50:06,081 | __main__ | INFO | Navigated to ExportPage

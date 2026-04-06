@@ -1,0 +1,41 @@
+2026-03-31 12:25:58,456 | app.db.connection | ERROR | Failed to create connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (61)
+2026-03-31 12:25:58,456 | app.db.connection | ERROR | Query error: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (61) | Query: SELECT * FROM admin_users WHERE username = %s
+2026-03-31 13:27:23,383 | app.db.connection | ERROR | Failed to create connection pool: 2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3306' (61)
+2026-03-31 13:27:23,383 | app.db.connection | ERROR | Query error: 2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3306' (61) | Query: SELECT * FROM admin_users WHERE username = %s
+2026-03-31 13:29:06,431 | app.db.connection | ERROR | Failed to create connection pool: 2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3306' (61)
+2026-03-31 13:29:06,432 | app.db.connection | ERROR | Query error: 2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3306' (61) | Query: SELECT * FROM admin_users WHERE username = %s
+2026-03-31 14:04:46,451 | app.db.connection | ERROR | Failed to create connection pool: 1045 (28000): Access denied for user 'admin'@'localhost' (using password: YES)
+2026-03-31 14:04:46,451 | app.db.connection | ERROR | Query error: 1045 (28000): Access denied for user 'admin'@'localhost' (using password: YES) | Query: SELECT * FROM admin_users WHERE username = %s
+2026-03-31 14:09:15,999 | app.db.connection | INFO | Database connection pool created.
+2026-03-31 14:10:42,051 | __main__ | INFO | Navigated to LoginPage
+2026-03-31 14:10:52,550 | app.db.connection | INFO | Database connection pool created.
+2026-03-31 14:10:52,740 | app.services.auth_service | INFO | User 'shisa' authenticated successfully.
+2026-03-31 14:10:52,839 | app.services.crypto_service | INFO | Crypto engine initialized.
+2026-03-31 14:10:52,845 | app.services.audit_service | INFO | Audit: LOGIN by shisa - User 'shisa' logged in.
+2026-03-31 14:10:52,845 | __main__ | INFO | Navigated to MfaPage
+2026-03-31 14:10:58,808 | app.services.audit_service | INFO | Audit: MFA_VERIFIED by shisa - MFA verification successful.
+2026-03-31 14:10:58,809 | __main__ | INFO | Navigated to Dashboard
+2026-03-31 14:11:04,629 | __main__ | INFO | Navigated to AddPasswordPage
+2026-03-31 14:11:30,766 | app.services.password_service | INFO | Password added for site 'youtube', user 'shisa'.
+2026-03-31 14:11:30,767 | app.services.audit_service | INFO | Audit: ADD_PASSWORD by shisa - Added password for site 'youtube', user 'shisa'.
+2026-03-31 14:11:37,768 | __main__ | INFO | Navigated to Dashboard
+2026-03-31 14:11:38,682 | __main__ | INFO | Navigated to ViewPasswordsPage
+2026-03-31 14:11:44,320 | app.services.audit_service | INFO | Audit: VIEW_PASSWORD by shisa - Revealed password id=1.
+2026-03-31 14:11:45,978 | __main__ | INFO | Navigated to Dashboard
+2026-03-31 14:11:47,867 | __main__ | INFO | Navigated to AuditPage
+2026-03-31 14:11:49,145 | __main__ | INFO | Navigated to Dashboard
+2026-03-31 14:11:49,836 | __main__ | INFO | Navigated to DeletePasswordsPage
+2026-03-31 14:11:50,799 | __main__ | INFO | Navigated to Dashboard
+2026-03-31 14:11:51,880 | __main__ | INFO | Navigated to ExportPage
+2026-03-31 14:12:06,850 | app.services.export_service | INFO | Exported 1 records to CSV: /Users/shisa/Documents/test1.csv
+2026-03-31 14:12:06,852 | app.services.audit_service | INFO | Audit: EXPORT by shisa - Exported data as CSV to /Users/shisa/Documents/test1.csv.
+2026-03-31 14:12:09,851 | app.services.export_service | INFO | Exported 1 records to JSON: /Users/shisa/Documents/test2.json
+2026-03-31 14:12:09,853 | app.services.audit_service | INFO | Audit: EXPORT by shisa - Exported data as JSON to /Users/shisa/Documents/test2.json.
+2026-03-31 14:12:31,326 | app.services.export_service | INFO | Exported 1 records to encrypted file: /Users/shisa/Documents/test3.enc
+2026-03-31 14:12:31,328 | app.services.audit_service | INFO | Audit: EXPORT by shisa - Exported data as ENCRYPTED to /Users/shisa/Documents/test3.enc.
+2026-03-31 14:12:32,768 | __main__ | INFO | Navigated to Dashboard
+2026-04-06 13:47:27,276 | app.db.connection | INFO | Database connection pool created.
+2026-04-06 13:47:27,633 | app.services.auth_service | INFO | User 'Shisa' authenticated successfully.
+2026-04-06 13:47:27,826 | app.services.crypto_service | INFO | Crypto engine initialized.
+2026-04-06 13:47:27,832 | app.services.audit_service | INFO | Audit: LOGIN by Shisa - User 'Shisa' logged in.
+2026-04-06 13:47:51,417 | app.services.audit_service | INFO | Audit: MFA_VERIFIED by shisa - MFA verification successful.

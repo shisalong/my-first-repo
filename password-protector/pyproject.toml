@@ -1,0 +1,77 @@
+[project]
+name = "py-pwd-protect"
+version = "0.1.0"
+description = "Secure password manager with Tkinter GUI, MySQL backend, and TOTP MFA"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "cryptography>=46.0.6",
+    "mysql-connector-python>=9.6.0",
+    "pillow>=12.1.1",
+    "pyotp>=2.9.0",
+    "python-dotenv>=1.2.2",
+    "qrcode>=8.2",
+]
+
+[project.scripts]
+password-protect = "main:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.8",
+]
+
+# =============================================================================
+# RUFF CONFIGURATION (Linter + Formatter)
+# Ruff enforces PEP 8 style and catches common Python errors.
+# Docs: https://docs.astral.sh/ruff/
+# =============================================================================
+
+[tool.ruff]
+# Target Python 3.11 (matches requires-python)
+target-version = "py311"
+# Max line length (PEP 8 standard is 79, but 120 is common for modern projects)
+line-length = 120
+# Exclude auto-generated and non-source directories
+exclude = [".venv", "__pycache__", "logs", ".git"]
+
+[tool.ruff.lint]
+# Rule sets to enable:
+#   F  = Pyflakes (unused imports, undefined names, etc.)
+#   E  = pycodestyle errors (PEP 8 style violations)
+#   W  = pycodestyle warnings (PEP 8 style warnings)
+#   I  = isort (import sorting and grouping)
+#   N  = pep8-naming (function/class naming conventions)
+#   UP = pyupgrade (suggest modern Python syntax)
+#   B  = flake8-bugbear (common bug patterns)
+#   S  = flake8-bandit (security checks)
+#   C4 = flake8-comprehensions (simplify list/dict comprehensions)
+#   SIM = flake8-simplify (simplify code patterns)
+select = ["F", "E", "W", "I", "N", "UP", "B", "S", "C4", "SIM"]
+# Rules to ignore:
+#   E501 = line too long (handled by formatter)
+#   S311 = pseudo-random generators (not relevant here)
+#   S603/S607 = subprocess calls (not used)
+#   B008 = function call in default argument (used intentionally in Tkinter)
+ignore = ["E501", "S311", "S603", "S607", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+# S106 = hardcoded password — acceptable in create_admin.py (it's a setup script)
+# S105 = hardcoded password in constants — these are defaults from .env
+"create_admin.py" = ["S106"]
+"app/utils/constants.py" = ["S105"]
+# S105 = false positive — variable names contain "PASSWORD" but values are SQL queries, not secrets
+"app/db/queries.py" = ["S105"]
+# S602 = shell injection — not applicable to SQL parameterized queries
+"app/db/connection.py" = ["S602"]
+
+[tool.ruff.lint.isort]
+# Group imports: stdlib → third-party → local app
+known-first-party = ["app"]
+
+[tool.ruff.format]
+# Use double quotes (PEP 8 doesn't mandate, but consistency matters)
+quote-style = "double"
+# Use 4-space indentation (PEP 8 standard)
+indent-style = "space"
